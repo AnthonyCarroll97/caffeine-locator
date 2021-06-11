@@ -88,7 +88,7 @@ const Map = ({ map, userCoords, setPlaces, places, handleMarkerClick, setMap, se
     return (
         
         isLoaded && 
-        <>
+        <div className="h-screen">
         <Locate panTo={panTo}/>
         <GoogleMap 
             mapContainerStyle={containerStyle}
@@ -113,7 +113,7 @@ const Map = ({ map, userCoords, setPlaces, places, handleMarkerClick, setMap, se
         {places ? renderMarkers() : null} 
         {selectedMarker ? renderInfoWindow() : null}
         </GoogleMap>
-        </>
+        </div>
     )
 }
         
