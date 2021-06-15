@@ -102,8 +102,8 @@ const Map = ({ map, userCoords, setPlaces, places, handleMarkerClick, setMap, se
         
         isLoaded && 
         <div className="h-screen">
-            {/* <Heading/>
-            <Locate panTo={panTo} placeSearchOnCenter={placeSearchOnCenter} map={map} setMap={setMap}/> */}
+            <Heading/>
+            <Locate panTo={panTo} placeSearchOnCenter={placeSearchOnCenter} map={map} setMap={setMap}/>
             <GoogleMap 
                 mapContainerStyle={containerStyle}
                 zoom={15.5}
