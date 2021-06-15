@@ -46,10 +46,10 @@ const Map = ({ map, userCoords, setPlaces, places, handleMarkerClick, setMap, se
         }, [setPlaces, setMap]
     )
 
-    const panTo = useCallback(({lat,lng}) => {
-        mapRef.current.panTo({lat,lng})
-        mapRef.current.setZoom(14)
-    }, [])
+    // const panTo = useCallback(({lat,lng}) => {
+    //     mapRef.current.panTo({lat,lng})
+    //     mapRef.current.setZoom(14)
+    // }, [])
 
     const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
