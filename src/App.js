@@ -73,7 +73,7 @@ export default function App() {
 
   return (
     <div className="flex text-textMain flex-wrap">
-      <div className="w-screen h-5/6 lg:w-9/12 lg:h-screen z-0 relative">
+      <div className="w-screen h-screen lg:w-9/12 lg:h-screen z-0 relative bg-red">
         { userLocated ? 
           <Map 
             userCoords={userCoords} 

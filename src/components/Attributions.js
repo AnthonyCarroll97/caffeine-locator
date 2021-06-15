@@ -4,7 +4,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 export default function Attributions() {
     return (
-        <div className="flex flex-col p-2 justify-evenly h-1/6">
+        <div className="flex flex-col p-2 justify-evenly h-1/6 bg-highlightMid">
             <h1 className="text-2xl text-center">Created By</h1>
             <div className="flex justify-evenly">
                 <div>

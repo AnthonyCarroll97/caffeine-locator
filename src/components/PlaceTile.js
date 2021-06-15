@@ -8,10 +8,10 @@ const PlaceTile = ({ placeObj, getPlaceDetails, map, handleMarkerClick }) => {
 
     return (
         <div className="my-4 mx-2 rounded bg-highlightHigh px-2 py-1 shadow">
-            <div className="">
-                <h1 className="text-2xl">{placeObj.name}</h1>
+            <div className="w-80 lg:w-full">
+                <h1 className="text-2xl flex mb-2">{placeObj.name}</h1>
                 
-                <div className="flex lg:justify-between lg:items-center lg:flex-row flex-col">
+                <div className="flex lg:justify-between lg:items-center lg:flex-row flex-col justify-between h-4/6">
                     <Rating 
                     name="stars"
                     value={placeObj.rating}
