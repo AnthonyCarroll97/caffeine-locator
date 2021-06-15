@@ -22,8 +22,8 @@ const PlacesPanel = ({ places, getPlaceDetails, map, handleMarkerClick }) => {
     }
 
     return (
-        <div className="w-3/12 h-screen bg-highlightMid">
-            <div className="overflow-y-scroll overflow-x-hidden h-5/6">
+        <div className="lg:w-3/12 lg:relative lg:block lg:h-screen bg-highlightMid absolute lg:bottom-0 -bottom-28 w-screen flex flex-col">
+            <div className="lg:overflow-y-scroll lg:overflow-x-hidden lg:h-5/6 h-2/6 overflow-x-scroll lg:flex-none lg:block flex">
                 { places.length > 1 ? renderPlaces(places) 
                 : 
                 <PlacesPanelLoading></PlacesPanelLoading>

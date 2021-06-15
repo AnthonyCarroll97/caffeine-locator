@@ -11,7 +11,7 @@ const PlaceTile = ({ placeObj, getPlaceDetails, map, handleMarkerClick }) => {
             <div className="">
                 <h1 className="text-2xl">{placeObj.name}</h1>
                 
-                <div className="flex justify-between items-center">
+                <div className="flex lg:justify-between lg:items-center lg:flex-row flex-col">
                     <Rating 
                     name="stars"
                     value={placeObj.rating}

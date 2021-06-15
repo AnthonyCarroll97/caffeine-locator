@@ -128,7 +128,7 @@ const Map = ({ map, userCoords, setPlaces, places, handleMarkerClick, setMap, se
         {places ? renderMarkers() : null} 
         {selectedMarker && placeDetails ? renderInfoWindow() : null}
         </GoogleMap>
-        </>
+        </div>
     )
 }
         
