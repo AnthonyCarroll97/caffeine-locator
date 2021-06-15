@@ -5,11 +5,11 @@ import {
     Marker,
     InfoBox
 } from '@react-google-maps/api';
-import Locate from "./Locate"
+// import Locate from "./Locate"
 import mapStyles from "../utils/mapStyles"
 
 import HighlightOffIcon from '@material-ui/icons/HighlightOff'
-import Heading from './Heading'
+// import Heading from './Heading'
 
 const containerStyle = {
   width: '100%',
@@ -102,8 +102,8 @@ const Map = ({ map, userCoords, setPlaces, places, handleMarkerClick, setMap, se
         
         isLoaded && 
         <div className="h-screen">
-            <Heading/>
-            <Locate panTo={panTo} placeSearchOnCenter={placeSearchOnCenter} map={map} setMap={setMap}/>
+            {/* <Heading/> */}
+            {/* <Locate panTo={panTo} placeSearchOnCenter={placeSearchOnCenter} map={map} setMap={setMap}/> */}
             <GoogleMap 
                 mapContainerStyle={containerStyle}
                 zoom={15.5}
