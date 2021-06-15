@@ -1,14 +1,13 @@
-import React, {useRef, useCallback, useMemo, memo} from 'react'
+import React, {useRef, useCallback,  memo} from 'react'
 import { 
     GoogleMap, 
     useLoadScript, 
-    Marker, 
-    InfoWindow,
+    Marker,
     InfoBox
 } from '@react-google-maps/api';
 import Locate from "./Locate"
 import mapStyles from "../utils/mapStyles"
-import { Rating } from '@material-ui/lab'
+
 import HighlightOffIcon from '@material-ui/icons/HighlightOff'
 import Heading from './Heading'
 
@@ -44,7 +43,7 @@ const Map = ({ map, userCoords, setPlaces, places, handleMarkerClick, setMap, se
                 radius: '5000',
                 type: ['cafe']
             }, (placesArr) => setPlaces(placesArr))
-        }, [setPlaces]
+        }, [setPlaces, setMap]
     )
 
     const panTo = useCallback(({lat,lng}) => {
@@ -52,7 +51,7 @@ const Map = ({ map, userCoords, setPlaces, places, handleMarkerClick, setMap, se
         mapRef.current.setZoom(14)
     }, [])
 
-    const { isLoaded, loadError } = useLoadScript({
+    const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
     libraries
     })
@@ -76,7 +75,6 @@ const Map = ({ map, userCoords, setPlaces, places, handleMarkerClick, setMap, se
     // const infoBoxOptions = { closeBoxURL: '', alignBottom: true, pixelOffset: new window.google.maps.Size(-100, -8)}
 
     const renderInfoWindow = () => {
-        const placeRating = placeDetails.rating
         return (
             <InfoBox 
                 position={selectedMarker.geometry.location}
@@ -104,31 +102,31 @@ const Map = ({ map, userCoords, setPlaces, places, handleMarkerClick, setMap, se
         
         isLoaded && 
         <>
-        <Heading/>
-        <Locate panTo={panTo} placeSearchOnCenter={placeSearchOnCenter} map={map} setMap={setMap}/>
-        <GoogleMap 
-            mapContainerStyle={containerStyle}
-            zoom={15.5}
-            center={userCoords}
-            // change below to placeSearchOnCenter
-            onLoad={placeSearchOnCenter}
-            options={options}
-            onClick={(e)=> handleMarkerClick(null)}
-            onDragEnd={()=>placeSearchOnCenter(map)}
-        > 
-        <Marker
-            position={userCoords}
-            icon={{
-                url: '/YouAreHere.svg',
-                scaledSize: new window.google.maps.Size(50,50),
-                origin: new window.google.maps.Point(0,0),
-                anchor: new window.google.maps.Point(25,25)
-            }}
-        />
-        {places ? renderMarkers() : null} 
-        {selectedMarker && placeDetails ? renderInfoWindow() : null}
-        </GoogleMap>
-        </div>
+            <Heading/>
+            <Locate panTo={panTo} placeSearchOnCenter={placeSearchOnCenter} map={map} setMap={setMap}/>
+            <GoogleMap 
+                mapContainerStyle={containerStyle}
+                zoom={15.5}
+                center={userCoords}
+                // change below to placeSearchOnCenter
+                onLoad={placeSearchOnCenter}
+                options={options}
+                onClick={(e)=> handleMarkerClick(null)}
+                onDragEnd={()=>placeSearchOnCenter(map)}
+            > 
+            <Marker
+                position={userCoords}
+                icon={{
+                    url: '/YouAreHere.svg',
+                    scaledSize: new window.google.maps.Size(50,50),
+                    origin: new window.google.maps.Point(0,0),
+                    anchor: new window.google.maps.Point(25,25)
+                }}
+            />
+            {places ? renderMarkers() : null} 
+            {selectedMarker && placeDetails ? renderInfoWindow() : null}
+            </GoogleMap>
+        </>
     )
 }
         

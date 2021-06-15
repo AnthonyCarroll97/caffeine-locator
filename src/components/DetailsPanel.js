@@ -1,6 +1,5 @@
 import React from 'react'
 import { Rating } from '@material-ui/lab';
-import { Paper, Button } from '@material-ui/core'
 import Carousel from 'react-material-ui-carousel'
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
@@ -13,7 +12,7 @@ const DetailsPanel = ({ placeDetails, removeSelectedPlace }) => {
           placeDetails.photos.filter(photoObj => {
             if(photoObj.height < photoObj.width){
                 // pre-load the images
-                const picture = new Image
+                const picture = new Image()
                 picture.src = photoObj.getUrl()
                 return true
             } 
@@ -47,8 +46,8 @@ const DetailsPanel = ({ placeDetails, removeSelectedPlace }) => {
             { placeDetails.photos &&
               <div className="max-w-full">
                   <Carousel animation={"slide"}>
-                      {filterImages().map((photo) => {
-                          return <img src={photo.getUrl()} ></img>
+                      {filterImages().map((photo, index) => {
+                          return <img src={photo.getUrl()} alt="cafe" key={index}></img>
                       })}
                   </Carousel>  
               </div>
