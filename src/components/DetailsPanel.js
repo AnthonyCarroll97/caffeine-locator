@@ -22,12 +22,12 @@ const DetailsPanel = ({ placeDetails, removeSelectedPlace }) => {
     }
     
     return (
-        <div className="absolute top-2 lg:right-2 left-2 z-10 p-4 lg:w-4/12 lg:h-auto h-1/3 overflow-y-scroll max-w-lg rounded-lg bg-highlightMid lg:mr-0 mr-2">
+        <div className="absolute top-2 z-10 right-2 p-4 lg:w-4/12 lg:h-auto h-2/5 left-2 lg:left-auto rounded-lg bg-highlightMid lg:mr-0 ">
             <div className="flex justify-between mb-1">
                 <h1 className="lg:text-3xl text-2xl">{placeDetails.name}</h1>
                 <HighlightOffIcon style={{ fontSize: "40", cursor: "pointer" }}onClick={removeSelectedPlace}></HighlightOffIcon>
             </div>
-            <div className="flex flex-col lg:block">
+            <div className="flex flex-col h-5/6 lg:block overflow-y-scroll">
                 <div className="w-full">
                     <Rating 
                     name="stars"
